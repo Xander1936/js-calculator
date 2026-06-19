@@ -12,18 +12,20 @@ let accumulativeCalculation
  * @param {HTMLElement} button - The button element that was clicked
  */
 function calculate(button) {
-    const value = button.textContent
+    const value = button.textContent;
+    // console.log('clicked', button.textContent);
     
     // Handle the CLEAR button
     if (value === 'CLEAR') {
         calculation = []
-        screenDisplay.textContent = ''
+        screenDisplay.textContent = '.'
     } 
     // Handle the equals button to evaluate the expression
     else if (value === '=') {
         if (accumulativeCalculation) {
             try {
                 // Use eval to compute the mathematical expression
+                // console.log('eval', accumulativeCalculation);
                 const result = eval(accumulativeCalculation)
                 screenDisplay.textContent = result
                 // Store result for further operations
